@@ -14,31 +14,42 @@
             <div class="col-md-12">
                 <h1 class="title">Trivia Title</h1>
                 <h3 id="question" class="question"></h3>
-                <label for="" class="option">
-                    <input type="radio" name="option" value="1"/>
-                    <span id="opt1"></span>
-                </label>
-                <label for="" class="option">
-                        <input type="radio" name="option" value="2"/>
-                        <span id="opt2"></span>
-                </label>
-                <label for="" class="option">
-                        <input type="radio" name="option" value="3"/>
-                        <span id="opt3"></span>
-                </label>
-                <label for="" class="option">
-                        <input type="radio" name="option" value="4"/>
-                        <span id="opt4"></span>
-                </label>
+                <div class="row">
+                    <div class="col-md-6">
+                            <label for="" class="option">
+                                    <input type="radio" name="option" value="1"/>
+                                    <span id="opt1"></span>
+                            </label>
+                    </div>
+                    <div class="col-md-6">
+                            <label for="" class="option">
+                                    <input type="radio" name="option" value="2"/>
+                                    <span id="opt2"></span>
+                            </label>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-6">
+                                <label for="" class="option">
+                                        <input type="radio" name="option" value="3"/>
+                                        <span id="opt3"></span>
+                                </label>
+                        </div>
+                        <div class="col-md-6">
+                                <label for="" class="option">
+                                        <input type="radio" name="option" value="4"/>
+                                        <span id="opt4"></span>
+                                </label>
+                        </div>
+                    </div>
+                
                 <button id="nextButton" class="nextBtn" onclick='loadNextQuestion();'>Next Question</button>
             </div>
             <div class="row" id="result" style="display:none;"></div>
         </div>
     </div>
 
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="assets/js/bootstrap.min.js"></script>

@@ -85,6 +85,4 @@ var questions = [{
     "option3": "Orlando Magic",
     "option4": "Miami Heat",
     "answer": "4",
-},
-
-]
+}]
