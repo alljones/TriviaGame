@@ -107,24 +107,25 @@ var resultCtn = $("#result");
 //Load and display questions & choices to the page
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
-    question.textContent = (questionIndex + 1) + '. '+q.question;
-    option1.textContent = q.option1;
-    option2.textContent = q.option2;
-    option3.textContent = q.option3;
-    option4.textContent = q.option4;
+    question.text(q.question);
+    opt1.text(q.option1);
+    opt2.text(q.option2);
+    opt3.text(q.option3);
+    opt4.text(q.option4);
+
 };
 
 
 function loadNextQuestion(){
     //Checking selected option chosen
-    var selectedOption = document.querySelector('input[type=radio]: checked');
+    var selectedOption = document.querySelector("input[type=radio]: checked");
     //If no selection is made, alert user to make a choice
     if(!selectedOption){
         alert("Please select your answer");
         return;
     }
     //Check selected with the correct answer
-    var answer = selectOption.value;
+    var answer = selectOption.value();
     //if correct add a point to the score
     if(questions[currentQuestion].answer == answer) {
         score++
@@ -132,15 +133,20 @@ function loadNextQuestion(){
     selectedOption.checked = false;
     currentQuestion++;
     if(currentQuestion == totQuestions - 1){
-        nextBtn.textContent = 'Finish';
+        nextBtn.text('FINISH');
     }
 
     if(currentQuestion == totQuestions) {
         container.style.display = 'none';
         resultCtn.style.display = '';
-        resultCtn.textContent = 'Your Score: ' + score;
+        resultCtn.text('Your Score: ' + score);
+        return;
     }
+
+    loadQuestion(currentQuestion);
 }
+
+loadQuestion(currentQuestion);
 
 
 
