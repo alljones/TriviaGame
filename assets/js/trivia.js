@@ -6,6 +6,8 @@ TRIVIA LOGIC:
 3. Set Timer to 30 seconds
 */
 
+
+// List of 10 questions/choices/answers
 var questions = [{
     "question": "What is the name of the championship trophy awarded to the winner of the NBA Finals?",
     "option1": "Larry O'Brien",
@@ -86,3 +88,59 @@ var questions = [{
     "option4": "Miami Heat",
     "answer": "4",
 }]
+
+
+var currentQuestion = 0;
+var score = 0;
+var totQuestions = questions.length; //Total Question Count
+
+var container = $("#quizContainer");
+var question = $("#question");
+var opt1 = $("#opt1");
+var opt2 = $("#opt2");
+var opt3 = $("#opt3");
+var opt4 = $("#opt4");
+var nextBtn = $("#nextButton");
+var resultCtn = $("#result");
+
+
+//Load and display questions & choices to the page
+function loadQuestion (questionIndex) {
+    var q = questions[questionIndex];
+    question.textContent = (questionIndex + 1) + '. '+q.question;
+    option1.textContent = q.option1;
+    option2.textContent = q.option2;
+    option3.textContent = q.option3;
+    option4.textContent = q.option4;
+};
+
+
+function loadNextQuestion(){
+    //Checking selected option chosen
+    var selectedOption = document.querySelector('input[type=radio]: checked');
+    //If no selection is made, alert user to make a choice
+    if(!selectedOption){
+        alert("Please select your answer");
+        return;
+    }
+    //Check selected with the correct answer
+    var answer = selectOption.value;
+    //if correct add a point to the score
+    if(questions[currentQuestion].answer == answer) {
+        score++
+    }
+    selectedOption.checked = false;
+    currentQuestion++;
+    if(currentQuestion == totQuestions - 1){
+        nextBtn.textContent = 'Finish';
+    }
+
+    if(currentQuestion == totQuestions) {
+        container.style.display = 'none';
+        resultCtn.style.display = '';
+        resultCtn.textContent = 'Your Score: ' + score;
+    }
+}
+
+
+
