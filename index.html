@@ -6,7 +6,7 @@
     <title>NBA Trivia Game</title>
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:800|Oswald" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -14,37 +14,47 @@
         <div class="row" id="quizContainer">
             <div class="col-md-12">
                 <h1 class="title">NBA Trivia</h1>
-                <h3 id="question" class="question"></h3>
                 <div class="row">
-                    <div class="col-md-6">
-                            <label for="" class="option">
-                                    <input type="radio" name="option" value="1"/>
-                                    <span id="opt1"></span>
-                            </label>
-                    </div>
-                    <div class="col-md-6">
-                            <label for="" class="option">
-                                    <input type="radio" name="option" value="2"/>
-                                    <span id="opt2"></span>
-                            </label>
-                    </div>
+                        <div class="col-md-12 text-center">
+                                        <button id="startButton" class="startBtn">Start Game</button>
+                        </div>
                 </div>
-                <div class="row">
-                        <div class="col-md-6">
-                                <label for="" class="option">
-                                        <input type="radio" name="option" value="3"/>
-                                        <span id="opt3"></span>
-                                </label>
+                <div class="row question-container">
+                        <div class="col-md-12">
+                                        <h3 id="question" class="question"></h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                    <label for="" class="option">
+                                                            <input type="radio" name="option" value="1"/>
+                                                            <span id="opt1"></span>
+                                                    </label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                    <label for="" class="option">
+                                                            <input type="radio" name="option" value="2"/>
+                                                            <span id="opt2"></span>
+                                                    </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                        <label for="" class="option">
+                                                                <input type="radio" name="option" value="3"/>
+                                                                <span id="opt3"></span>
+                                                        </label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <label for="" class="option">
+                                                                <input type="radio" name="option" value="4"/>
+                                                                <span id="opt4"></span>
+                                                        </label>
+                                                </div>
+                                            </div>
+
                         </div>
-                        <div class="col-md-6">
-                                <label for="" class="option">
-                                        <input type="radio" name="option" value="4"/>
-                                        <span id="opt4"></span>
-                                </label>
-                        </div>
-                    </div>
+                        <button id="nextButton" class="nextBtn">Next Question</button>
+                </div>
                 
-                <button id="nextButton" class="nextBtn">Next Question</button>
             </div>
             <div class="row" id="result" style="display:none;"></div>
         </div>

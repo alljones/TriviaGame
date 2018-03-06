@@ -146,10 +146,16 @@ function loadNextQuestion(){
     loadQuestion(currentQuestion);
 }
 
-loadQuestion(currentQuestion);
-
-nextBtn.on('click', function(){
-    console.log("Click");
-    loadNextQuestion(currentQuestion)
+$(document).ready(function () {
+    $('#startButton').on('click', function () {
+        $('#startButton').remove();
+        $('.question-container').show();
+        loadQuestion(currentQuestion);
+        nextBtn.on('click', function(){
+            //console.log("Click");
+            loadNextQuestion(currentQuestion)
+        });
+        
+    });
 });
 
