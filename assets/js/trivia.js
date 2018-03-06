@@ -112,20 +112,20 @@ function loadQuestion (questionIndex) {
     opt2.text(q.option2);
     opt3.text(q.option3);
     opt4.text(q.option4);
-
 };
 
 
 function loadNextQuestion(){
     //Checking selected option chosen
-    var selectedOption = document.querySelector("input[type=radio]: checked");
+    var selectedOption = $('input[type=radio]').is(':checked');
     //If no selection is made, alert user to make a choice
     if(!selectedOption){
         alert("Please select your answer");
         return;
     }
     //Check selected with the correct answer
-    var answer = selectOption.value();
+    var answer = $('input[name="option"]:checked').val();
+    console.log(answer)
     //if correct add a point to the score
     if(questions[currentQuestion].answer == answer) {
         score++
@@ -148,5 +148,8 @@ function loadNextQuestion(){
 
 loadQuestion(currentQuestion);
 
-
+nextBtn.on('click', function(){
+    console.log("Click");
+    loadNextQuestion(currentQuestion)
+});
 
