@@ -25,6 +25,12 @@ body{
     font-family: 'Exo', sans-serif;
 }
 
+#shotClock{
+    text-align: center;
+    color: red;
+    font-style: italic;
+
+}
 .question{
     padding: 20px;
     margin: 10px 0 10px 0;

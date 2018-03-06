@@ -103,6 +103,33 @@ var opt4 = $("#opt4");
 var nextBtn = $("#nextButton");
 var resultCtn = $("#result");
 
+//Shot Clock Timer
+var time = $("#shotClock");
+var number = 60;
+var intervalId;
+
+    // $("#stop").on("click", stop);
+
+    // $("#resume").on("click", run);
+
+    function run() {
+      clearInterval(intervalId);
+      intervalId = setInterval(decrement, 1000);
+    }
+
+    function decrement() {
+      number--;
+      $("#shotClock").text("Time Remaining: " + number);
+      if (number === 0) {
+        stop();
+        alert("Times Up!");
+      }
+    }
+
+    function stop() {
+      clearInterval(intervalId);
+    }
+
 
 //Load and display questions & choices to the page
 function loadQuestion (questionIndex) {
@@ -150,6 +177,7 @@ $(document).ready(function () {
     $('#startButton').on('click', function () {
         $('#startButton').remove();
         $('.question-container').show();
+        run();
         loadQuestion(currentQuestion);
         nextBtn.on('click', function(){
             //console.log("Click");
