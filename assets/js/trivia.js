@@ -161,6 +161,11 @@ function loadNextQuestion(){
     currentQuestion++;
     if(currentQuestion == totQuestions - 1){
         nextBtn.text('FINISH');
+        nextBtn.on('click', function(){
+            $('.question-container').hide();
+            resultCtn.show();
+            resultCtn.text('Your Score: ' + score);  
+        })
     }
 
     if(currentQuestion == totQuestions) {
